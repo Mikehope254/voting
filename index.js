@@ -1,9 +1,15 @@
+require('dotenv').config()
 const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser')
 
 const handle = require('./handlers') //to import local file
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT;
+
+app.use(cors())
+app.use(bodyParser.json())
 
 //the single endpoint
 app.get('/',(req, res) => res.json({ hello:'world'}));
