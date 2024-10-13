@@ -1,4 +1,4 @@
-modules.exports.notFound = (req, res, next) => {
+module.exports.notFound = (req, res, next) => {
   const err = new Error("Not found");
   err.status = 404;
 
